@@ -1,0 +1,16 @@
+{
+  "name": "QOG'OZ — PDF va rasm vositalari",
+  "short_name": "QOG'OZ",
+  "description": "28 ta PDF va rasm vositasi — to'liq brauzeringizda ishlaydi.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#e9ecef",
+  "theme_color": "#c1443c",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
