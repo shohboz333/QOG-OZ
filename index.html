@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QOG'OZ — PDF va rasm vositalari, brauzeringizda</title>
+<meta name="description" content="Birlashtiring, bo'ling, siqing, aylantiring, konvertatsiya qiling. 40 ta PDF va rasm vositasi — hech narsa serverga yuklanmaydi, hammasi brauzeringizda ishlaydi.">
+<meta name="keywords" content="pdf, pdf birlashtirish, pdf siqish, pdf konvertatsiya, pdf tools, jpg to pdf, pdf to jpg">
+<meta name="theme-color" content="#c1443c">
+<meta name="robots" content="index, follow">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="QOG'OZ — PDF va rasm vositalari, brauzeringizda">
+<meta property="og:description" content="40 ta PDF va rasm vositasi to'liq brauzerda ishlaydi. Fayllaringiz hech qayerga yuklanmaydi.">
+<meta property="og:image" content="icons/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+<a href="#tools" class="skip-link">Asosiy mazmunga o'tish</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="brand"><span class="stamp-mini" data-brand-symbol>Q</span><span data-brand-name>QOG'OZ</span></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menyuni ochish" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="siteNav">
+      <a href="#tools">Vositalar</a>
+      <a href="#how">Qanday ishlaydi</a>
+      <a href="#ai-help">AI yordamchi</a>
+      <a href="#privacy">Maxfiylik</a>
+      <a href="#advertise">Reklama</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="shortcut-btn" id="commandBtn" aria-label="Tezkor qidiruv">Ctrl K</button>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Vosita qidirish…" aria-label="Vosita qidirish">
+      </div>
+      <button class="icon-btn" id="themeToggle" aria-label="Mavzuni almashtirish">☾</button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu-panel" id="mobileMenuPanel" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-head"><b>QOG'OZ</b><button id="mobileMenuClose" aria-label="Menyuni yopish">✕</button></div>
+    <a href="#tools">⚡ Vositalar</a>
+    <a href="#ai-help">🤖 QOG'OZ AI</a>
+    <a href="#how">◎ Qanday ishlaydi</a>
+    <a href="#privacy">🔒 Maxfiylik</a>
+    <a href="#advertise">▣ Reklama</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Fayl operatsiyalari brauzerda · QOG'OZ AI xavfsiz server orqali</div>
+    <h1>PDF bilan ishlash <em>oson</em> va xavfsiz bo'lishi kerak.</h1>
+    <p class="lead" data-brand-tagline>Birlashtiring, bo'ling, siqing, konvertatsiya qiling — 40 ta vosita, hammasi shu sahifada, fayllaringiz hech qayerga yuklanmasdan.</p>
+    <div class="hero-cta"><a href="#tools" class="btn btn-primary">Vositani tanlash</a><a href="#privacy" class="btn btn-ghost">Maxfiylikni ko'rish</a></div>
+    <div class="hero-stats">
+      <div><b data-tool-count>40</b><span>ishlaydigan vosita</span></div>
+      <div><b>0</b><span>serverga yuklangan fayl</span></div>
+      <div><b>100%</b><span>brauzer ichida</span></div>
+    </div>
+    <div class="hero-visual" aria-hidden="true"><div class="visual-window"><div class="visual-top"><span></span><span></span><span></span><b>QOG'OZ PDF Tools</b></div><div class="visual-body"><div class="visual-file"><strong>PDF workflow</strong><small>Drag · Process · Download</small></div><div class="visual-row"><i></i><i></i><i></i></div><div class="visual-row wide"><i></i><i></i></div><div class="visual-button">✓ Ready to process</div></div><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="float-card float-card-a"><span>⚡</span><b>Fast workflow</b><small>Local processing</small></div><div class="float-card float-card-b"><span>🔒</span><b>Private</b><small>No upload</small></div></div></div>
+    <div class="hero-trust" aria-label="Mahsulot afzalliklari">
+      <span>✓ Ro'yxatdan o'tishsiz</span>
+      <span>✓ ZIP batch ishlovi</span>
+      <span>✓ PWA o'rnatish</span>
+      <span>✓ White-label tayyor</span>
+      <span>✓ Reklama uchun tayyor joylar</span>
+    </div>
+    <div class="hero-mini-stats"><span><b>40+</b> workflow</span><span><b>0</b> upload</span><span><b>AI</b> help</span><span><b>PWA</b> ready</span></div>
+    <div class="hero-quick" aria-label="Tezkor amallar"><button data-quick="merge-pdf">PDF birlashtirish</button><button data-quick="compress-pdf">PDF siqish</button><button data-quick="jpg-to-pdf">JPG → PDF</button><button data-quick="pdf-search">PDF ichidan qidirish</button></div>
+  </div>
+</section>
+
+<!-- PREMIUM AD SLOT: replace the placeholder with your AdSense/ad-network code after approval. -->
+<section class="ad-section ad-top" aria-label="Reklama joyi">
+  <div class="wrap">
+    <div class="ad-slot" data-ad-slot="top-banner">
+      <span class="ad-label">REKLAMA</span>
+      <strong>Bu yerda sizning reklamangiz bo'lishi mumkin</strong>
+      <span class="ad-sub">Auditoriyangizga mos reklama uchun premium joy.</span>
+    </div>
+  </div>
+</section>
+
+<section class="tools" id="tools">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Barcha vositalar</h2>
+        <p>Kerakli vositani bosing, faylni tashlang va natijani yuklab oling.</p>
+      </div>
+    </div>
+    <div class="cat-tabs" id="catTabs"></div>
+    <div class="subnav" id="subNav"></div>
+    <div class="grid" id="toolGrid"></div>
+  </div>
+</section>
+
+<section class="ad-section ad-inline" aria-label="Reklama joyi">
+  <div class="wrap">
+    <div class="ad-slot ad-slot-wide" data-ad-slot="tools-inline">
+      <span class="ad-label">SPONSOR / REKLAMA</span>
+      <strong>Bu yerda sizning reklamangiz bo'lishi mumkin</strong>
+      <span class="ad-sub">PDF, productivity, software va boshqa mos auditoriyalar uchun.</span>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-head"><div><h2>Qanday ishlaydi</h2><p>Uch qadam — hech qanday ro'yxatdan o'tish shart emas.</p></div></div>
+    <div class="steps">
+      <div class="step-card"><div class="n">01</div><h4>Vositani tanlang</h4><p>40 ta vosita ichidan kerakligini bosing yoki qidiruvdan toping.</p></div>
+      <div class="step-card"><div class="n">02</div><h4>Faylni tashlang</h4><p>Sudrab tashlang yoki tanlang. Ko'p faylni birdaniga yuklash mumkin.</p></div>
+      <div class="step-card"><div class="n">03</div><h4>Yuklab oling</h4><p>Qayta ishlash brauzeringizda amalga oshadi va natija darhol tayyor bo'ladi.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ai-help" id="ai-help">
+  <div class="wrap">
+    <div class="ai-shell">
+      <div class="ai-head">
+        <div><span class="eyebrow">QOG'OZ AI</span><h2>PDF bo'yicha savolingiz bormi?</h2><p>Tool tanlash, fayl tayyorlash yoki xatoni tushunishda yordam oling.</p></div>
+        <div class="ai-status" id="aiStatus"><span class="ai-dot"></span><span>QOG'OZ AI</span><small>Tekshirilmoqda…</small></div>
+      </div>
+      <div class="ai-suggestions" id="aiSuggestions">
+        <button data-q="PDF ni qanday birlashtiraman?">PDF ni birlashtirish</button>
+        <button data-q="PDF hajmini qanday kamaytiraman?">PDF siqish</button>
+        <button data-q="Qaysi tool JPG ni PDF qiladi?">JPG → PDF</button>
+        <button data-q="Fayllarim serverga yuboriladimi?">Maxfiylik</button>
+      </div>
+      <div class="ai-toolbar"><span>Yordamchi</span><button type="button" id="aiClear" class="ai-tool-btn">Tozalash</button></div><div class="ai-messages" id="aiMessages" aria-live="polite">
+        <div class="ai-msg bot"><div class="ai-avatar">Q</div><div>Salom! Men QOG'OZ yordamchisiman. Masalan, <b>“PDF hajmini qanday kamaytiraman?”</b> deb so'rang.</div></div>
+      </div>
+      <form class="ai-form" id="aiForm">
+        <input id="aiInput" autocomplete="off" placeholder="Savolingizni yozing…" aria-label="AI yordamchiga savol">
+        <button class="btn btn-primary" type="submit">Yuborish ↑</button>
+      </form>
+      <div class="ai-note">QOG'OZ AI loyiha, tool'lar va PDF ish jarayonlari haqida yordam beradi. OpenAI ulansa, haqiqiy generativ javob beradi. API kaliti faqat serverda saqlanadi; brauzerga chiqarilmaydi.</div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="advertise" id="advertise">
+  <div class="wrap">
+    <div class="ad-cta">
+      <div>
+        <span class="eyebrow">HAMKORLIK</span>
+        <h2>Auditoriyamizga reklamangizni ko'rsating.</h2>
+        <p>QOG'OZ PDF Tools foydalanuvchilari uchun mos reklama, sponsorlik yoki mahsulot joylashuvi uchun premium reklama joylari mavjud.</p>
+      </div>
+      <a class="btn btn-primary" data-brand-email href="https://t.me/Shohboz_222" target="_blank" rel="noopener noreferrer">Reklama uchun bog'lanish →</a>
+    </div>
+  </div>
+</section>
+
+<section class="privacy" id="privacy">
+  <div class="wrap">
+    <div class="section-head"><div><h2>Maxfiylik birinchi o'rinda</h2><p data-brand-footer>Fayllaringiz brauzeringizdan hech qayerga chiqmaydi.</p></div></div>
+    <div class="privacy-grid">
+      <div class="privacy-card"><div class="icon">🔒</div><h4>Server yo'q</h4><p>Fayllar hech qachon internet orqali yuborilmaydi — barcha hisoblash mahalliy ravishda amalga oshiriladi.</p></div>
+      <div class="privacy-card"><div class="icon">🗑</div><h4>Avtomatik tozalash</h4><p>Sahifani yopganingizda yoki yangilaganingizda barcha vaqtinchalik ma'lumotlar xotiradan o'chiriladi.</p></div>
+      <div class="privacy-card"><div class="icon">📜</div><h4>Faqat mahalliy tarix</h4><p>Sevimlilar va so'nggi ishlatilganlar faqat sizning brauzeringiz localStorage'ida saqlanadi.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap footer-row">
+    <div class="brand"><span class="stamp-mini" data-brand-symbol>Q</span><span data-brand-name>QOG'OZ</span></div>
+    <div>© <span id="year"></span> — QOG'OZ PDF Tools Pro · Q.Shoxboz tomonidan yaratilgan · Commercial-ready template · Reklama joylari mavjud. Savollar: <a data-brand-email href="https://t.me/Shohboz_222" target="_blank" rel="noopener noreferrer">@Shohboz_222</a></div>
+  </div>
+</footer>
+
+<!-- ===================================================== workspace modal -->
+<div class="command-overlay" id="commandOverlay" aria-hidden="true"><div class="command" role="dialog" aria-modal="true" aria-label="Tezkor qidiruv"><div class="command-head"><span>Tezkor qidiruv</span><kbd>ESC</kbd></div><input id="commandInput" placeholder="PDF birlashtirish, JPG → PDF…" autocomplete="off"><div id="commandResults"></div></div></div>
+
+<div class="workspace-overlay" id="workspaceOverlay">
+  <div class="workspace" role="dialog" aria-modal="true">
+    <div class="ws-head">
+      <div><h3 id="wsTitle">Vosita</h3><p id="wsDesc"></p></div>
+      <button class="close-btn" id="wsClose" aria-label="Yopish">✕</button>
+    </div>
+
+    <div id="dropzone" class="dropzone">
+      <div class="dz-icon">📎</div>
+      <div class="dz-text">Fayllarni shu yerga tashlang</div>
+      <div class="dz-hint" id="dzHint">yoki bosib tanlang</div>
+      <input type="file" id="fileInput">
+    </div>
+
+    <div id="pageOrganizer" style="display:none"></div>
+
+    <div id="standardArea">
+      <ul class="filelist" id="fileList"></ul>
+      <div class="options" id="optionsBox"></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="runBtn" disabled>Ishga tushirish</button>
+      <span class="status" id="statusText"></span>
+    </div>
+    <div class="progress" id="progressBar"><i></i></div>
+
+    <div class="result" id="resultBox">
+      <div class="rtext">
+        <div id="resultTitle">Tayyor</div>
+        <span class="mono" id="resultMeta"></span>
+        <span class="mono" id="resultDetail"></span>
+      </div>
+      <a class="btn btn-primary btn-sm" id="downloadBtn" download>Yuklab olish</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/toolsData.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/ai.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
